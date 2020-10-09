@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/singer-page/static/css/main.5f361e03.chunk.css",
+    "main.js": "/singer-page/static/js/main.e02a976c.chunk.js",
+    "main.js.map": "/singer-page/static/js/main.e02a976c.chunk.js.map",
+    "runtime-main.js": "/singer-page/static/js/runtime-main.60433e94.js",
+    "runtime-main.js.map": "/singer-page/static/js/runtime-main.60433e94.js.map",
+    "static/js/2.a6725cb6.chunk.js": "/singer-page/static/js/2.a6725cb6.chunk.js",
+    "static/js/2.a6725cb6.chunk.js.map": "/singer-page/static/js/2.a6725cb6.chunk.js.map",
+    "index.html": "/singer-page/index.html",
+    "precache-manifest.37ad7ac9d0d7cb33fc4554404a9e1039.js": "/singer-page/precache-manifest.37ad7ac9d0d7cb33fc4554404a9e1039.js",
+    "service-worker.js": "/singer-page/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/singer-page/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.a6725cb6.chunk.js.LICENSE.txt": "/singer-page/static/js/2.a6725cb6.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.60433e94.js",
+    "static/js/2.a6725cb6.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.e02a976c.chunk.js"
+  ]
+}
