@@ -1,6 +1,5 @@
 {
   "name": "henrik_zenkert",
-  "homepage": "https://YesSeri.github.io/singer-page",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,12 +16,8 @@
     "styled-components": "^5.2.0"
   },
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "serve -s build",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"
