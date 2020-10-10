@@ -5,11 +5,17 @@ import { Link } from 'react-router-dom'
 const NavbarStyle = styled.div`
   display: flex;
   font-size: 1.5em;
+  margin: 50px 0px;
   @media (max-width: 768px) {
+    margin: 0px;
     flex-direction: column;
   }
 `;
 const NavLogo = styled.div`
+  @media (max-width: 768px) {
+    margin: 20px 0px;
+  }
+  font-size: 2em;
   color: palevioletred;
   background-color: white;
   flex: 1 1 0;
@@ -31,10 +37,11 @@ const Button = styled.button`
 const Links = styled.div`
   display:flex;
   justify-content: space-around;
+  align-self: center;
   flex: 2 1 0;
   @media (max-width: 768px) {
-    display: ${props => props.showNav ? 'flex' : 'none'};
     flex-direction: column;
+    display: ${props => props.showNav ? 'flex' : 'none'};
   }
   a{
     text-decoration:none;
