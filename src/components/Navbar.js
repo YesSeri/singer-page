@@ -33,7 +33,7 @@ const Button = styled.button`
     border: 2px solid palevioletred;
     border-radius: 3px;
   }
-`;
+`
 const Links = styled.div`
   display:flex;
   justify-content: space-around;

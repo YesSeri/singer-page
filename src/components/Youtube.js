@@ -8,7 +8,6 @@ const VideoContainer = styled.div`
 	height: 0;
 	padding-bottom: 56.25%;
 	overflow: hidden;
-	margin-bottom: 50px;
 
 	iframe {
 		width: 100%;
@@ -19,7 +18,7 @@ const VideoContainer = styled.div`
 	}
 `
 
-export default function Youtube({ handlePlay, handlePause, videoId }) {
+export default function Youtube({ videoId }) {
 	const [showVideo, setShowVideo] = useState(false);
 	const opts = {
 		playerVars: {
@@ -29,9 +28,7 @@ export default function Youtube({ handlePlay, handlePause, videoId }) {
 
 	return (
 		<VideoContainer showVideo={showVideo}>
-			<YouTube onPlay={handlePlay} onPause={handlePause} videoId={videoId} opts={opts} onReady={()=>setShowVideo(true)} />;
+			<YouTube videoId={videoId} opts={opts} onReady={() => setShowVideo(true)} />;
 		</VideoContainer>
-
 	)
-
 }
