@@ -12,14 +12,6 @@ import './App.css';
 const AppStyle = styled.div`
   text-align: center;
   font-size: 1.2rem;
-  margin: auto;
-  max-width:70vw;
-  @media (max-width: 1440px) {
-    max-width: 90vw;
-  }
-  @media (max-width: 768px) {
-    max-width: 100vw;
-  }
 `
 
 function App() {

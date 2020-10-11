@@ -4,9 +4,12 @@ import { Link } from 'react-router-dom'
 
 const NavbarStyle = styled.div`
   display: flex;
+  background-color: #fff;
   font-size: 1.5em;
-  margin: 50px 0px;
+  min-height: 150px;
+  align-items: center;
   @media (max-width: 768px) {
+    min-height: 0px;
     margin: 0px;
     flex-direction: column;
   }
@@ -17,7 +20,6 @@ const NavLogo = styled.div`
   }
   font-size: 2em;
   color: palevioletred;
-  background-color: white;
   flex: 1 1 0;
 
 `;
@@ -48,6 +50,7 @@ const Links = styled.div`
     color: green;
   }
 `
+
 const navItems = [
   { path: "/", name: 'Home' },
   { path: "/bio", name: 'Bio' },

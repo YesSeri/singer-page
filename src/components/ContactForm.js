@@ -5,13 +5,22 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import styled from 'styled-components'
 
 const NameInput = styled.input`
-  flex: 1 47%;
+  flex-grow:1;
+  @media (max-width: 768px) {
+    flex: 1 33%;
+  }
 `;
 const EmailInput = styled.input`
-  flex: 1 47%;
+  flex-grow:1;
+  @media (max-width: 768px) {
+    flex: 1 33%;
+  }
 `;
 const SubjectInput = styled.input`
-  flex: 1 10%;
+  flex: 1 100%;
+  @media (max-width: 768px) {
+    flex: 1 33%;
+  }
 `;
 const InputDiv = styled.div`
   display: flex;
