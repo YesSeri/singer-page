@@ -2,7 +2,47 @@ import React, { Component } from 'react';
 import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
+import styled from 'styled-components'
 
+const NameInput = styled.input`
+  flex: 1 47%;
+`;
+const EmailInput = styled.input`
+  flex: 1 47%;
+`;
+const SubjectInput = styled.input`
+  flex: 1 10%;
+`;
+const InputDiv = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+const FormDiv = styled.div`
+  display:flex;
+  justify-content:center;
+  @media (max-width: 768px) {
+  }
+`;
+const SubmitButton = styled.button`
+  display:block;
+  margin:auto;
+  @media (max-width: 768px) {
+  }
+`;
+const TextArea = styled.textarea`
+  width: 100%;
+  margin-bottom: 5px;
+  height: 300px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+const Form = styled.form`
+  box-shadow: 10px 10px 10px #333;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 10px;
+`
 // Email validation
 const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
 
@@ -88,7 +128,7 @@ class ContactForm extends Component {
         Subject: ${subject}
         Message: ${message}
       `);
-      
+
       this.toastifySuccess();
       this.resetForm();
     } else {
@@ -136,81 +176,66 @@ class ContactForm extends Component {
     const { formErrors } = this.state;
 
     return (
-      <div className='ContactForm'>
-        <form id='contact-form' onSubmit={this.handleSubmit} noValidate>
-          <div className='row'>
-            <div className='col-6'>
-              <input
-                type='text'
-                name='name'
-                value={this.state.name}
-                className={`form-control formInput ${formErrors.name.length > 0 ? 'error' : null}`}
-                onChange={this.handleChange}
-                placeholder='Name'
-                noValidate
-              ></input>
-              {formErrors.name.length > 0 && (
-                <span className='errorMessage'>{formErrors.name}</span>
-              )}
-            </div>
+      <FormDiv>
+        <Form onSubmit={this.handleSubmit} noValidate>
+          <InputDiv>
+            <NameInput
+              type='text'
+              name='name'
+              value={this.state.name}
+              className={`form-control formInput ${formErrors.name.length > 0 ? 'error' : null}`}
+              onChange={this.handleChange}
+              placeholder='Name'
+              noValidate
+            ></NameInput>
+            {formErrors.name.length > 0 && (
+              <span className='errorMessage'>{formErrors.name}</span>
+            )}
+            <EmailInput
+              type='email'
+              name='email'
+              value={this.state.email}
+              className={`form-control formInput ${formErrors.email.length > 0 ? 'error' : null}`}
+              onChange={this.handleChange}
+              placeholder='Email'
+              noValidate
+            ></EmailInput>
+            {formErrors.email.length > 0 && (
+              <span className='errorMessage'>{formErrors.email}</span>
+            )}
 
-            <div className='col-6'>
-              <input
-                type='email'
-                name='email'
-                value={this.state.email}
-                className={`form-control formInput ${formErrors.email.length > 0 ? 'error' : null}`}
-                onChange={this.handleChange}
-                placeholder='Email'
-                noValidate
-              ></input>
-              {formErrors.email.length > 0 && (
-                <span className='errorMessage'>{formErrors.email}</span>
-              )}
-            </div>
-          </div>
-
-          <div className='row'>
-            <div className='col-6'>
-              <input
-                type='subject'
-                name='subject'
-                value={this.state.subject}
-                className={`form-control formInput ${
-                  formErrors.subject.length > 0 ? 'error' : null
+            <SubjectInput
+              type='subject'
+              name='subject'
+              value={this.state.subject}
+              className={`form-control formInput ${formErrors.subject.length > 0 ? 'error' : null
                 }`}
-                onChange={this.handleChange}
-                placeholder='Subject'
-                noValidate
-              ></input>
-              {formErrors.subject.length > 0 && (
-                <span className='errorMessage'>{formErrors.subject}</span>
-              )}
-            </div>
-
-            <div className='col-6'>
-              <textarea
-                rows='5'
-                name='message'
-                value={this.state.message}
-                className={`form-control formInput ${
-                  formErrors.message.length > 0 ? 'error' : null
-                }`}
-                onChange={this.handleChange}
-                placeholder='Message'
-                noValidate
-              ></textarea>
-              {formErrors.message.length > 0 && (
-                <span className='errorMessage'>{formErrors.message}</span>
-              )}
-            </div>
-          </div>
-          <button className='submit-btn' type='submit'>
+              onChange={this.handleChange}
+              placeholder='Subject'
+              noValidate
+            ></SubjectInput>
+            {formErrors.subject.length > 0 && (
+              <span className='errorMessage'>{formErrors.subject}</span>
+            )}
+          </InputDiv>
+          <TextArea
+            name='message'
+            value={this.state.message}
+            className={`form-control formInput ${formErrors.message.length > 0 ? 'error' : null
+              }`}
+            onChange={this.handleChange}
+            placeholder='Message'
+            noValidate
+          ></TextArea>
+          {formErrors.message.length > 0 && (
+            <span className='errorMessage'>{formErrors.message}</span>
+          )}
+          <SubmitButton className='submit-btn' type='submit'>
             Submit
-          </button>
-        </form>
+          </SubmitButton>
+        </Form>
         <ToastContainer />
-      </div>
+      </FormDiv>
     );
   }
 }
