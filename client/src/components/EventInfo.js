@@ -13,11 +13,20 @@ const Div = styled.div`
   }
 `;
 
-export default function EventInfo({ concert: { name, prettyDate, info } }) {
+function convertDate(mysqlDate){
+  const [date, time] = mysqlDate.split(/[T]/)
+  const properTime = time.slice(0, 5)
+  console.log(`date ${date} time ${properTime}`);
+  return `${date} ${properTime}`
+}
+
+export default function EventInfo({ concert: { name, date, info } }) {
+  const dateTime = convertDate(date);
   return (
     <Div>
       <h1>{name}</h1>
-      <p>{prettyDate()}</p>
+      <p>{dateTime}</p>
+
       <p>{info}</p>
     </Div>
   )
