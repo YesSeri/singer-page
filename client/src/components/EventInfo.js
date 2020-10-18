@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Div = styled.div`
   margin: auto;
-  background-color: #b73;
+  background-color: palevioletred;
   border: 3px solid black;
   margin-bottom: 3px;
   width: 50%;

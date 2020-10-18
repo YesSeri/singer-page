@@ -2,14 +2,15 @@ require('dotenv').config()
 const express = require('express');
 const mysql2 = require('mysql2')
 
+// console.log(process.env.HOST, process.env.USERNAME, process.env.DATABASE);
 const connection = mysql2.createConnection({
-    host: 'localhost',
-    user: 'root',
-    database: 'singer_page_db',
+    host: process.env.HOST,
+    user: process.env.USERNAME,
+    database: process.env.DATABASE,
+    password: process.env.PASSWORD,
 });
 
 const app = express();
-
 
 app.use(express.urlencoded({
     extended: true
